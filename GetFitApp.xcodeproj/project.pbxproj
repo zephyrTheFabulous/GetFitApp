@@ -6,17 +6,18 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		2999922D2E2E98560017BC22 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 299992292E2E98560017BC22 /* Assets.xcassets */; };
+		2999922E2E2E98560017BC22 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2999922A2E2E98560017BC22 /* ContentView.swift */; };
+		2999922F2E2E98560017BC22 /* GetFitAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2999922B2E2E98560017BC22 /* GetFitAppApp.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		2999921B2E2E98460017BC22 /* GetFitApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GetFitApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		299992292E2E98560017BC22 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2999922A2E2E98560017BC22 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		2999922B2E2E98560017BC22 /* GetFitAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFitAppApp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		2999921D2E2E98460017BC22 /* GetFitApp */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = GetFitApp;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		299992182E2E98460017BC22 /* Frameworks */ = {
@@ -32,7 +33,7 @@
 		299992122E2E98460017BC22 = {
 			isa = PBXGroup;
 			children = (
-				2999921D2E2E98460017BC22 /* GetFitApp */,
+				2999922C2E2E98560017BC22 /* GetFitApp */,
 				2999921C2E2E98460017BC22 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -43,6 +44,16 @@
 				2999921B2E2E98460017BC22 /* GetFitApp.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		2999922C2E2E98560017BC22 /* GetFitApp */ = {
+			isa = PBXGroup;
+			children = (
+				299992292E2E98560017BC22 /* Assets.xcassets */,
+				2999922A2E2E98560017BC22 /* ContentView.swift */,
+				2999922B2E2E98560017BC22 /* GetFitAppApp.swift */,
+			);
+			path = GetFitApp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -59,9 +70,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				2999921D2E2E98460017BC22 /* GetFitApp */,
 			);
 			name = GetFitApp;
 			packageProductDependencies = (
@@ -109,6 +117,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2999922D2E2E98560017BC22 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +128,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2999922E2E2E98560017BC22 /* ContentView.swift in Sources */,
+				2999922F2E2E98560017BC22 /* GetFitAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
