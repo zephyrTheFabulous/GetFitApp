@@ -1,34 +1,32 @@
-//
-//  ContentView.swift
-//  GetFitApp
-//
-//  Created by Anthony on 21/7/25.
-//
+  //
+  //  ContentView.swift
+  //  GetFitApp
+  //
+  //  Created by Anthony on 21/7/25.
+  //
 
 import SwiftUI
 
 struct ContentView: View {
-    var body: some View {
-      TabView {
-        Tab ("Welcome", systemImage: "hand.wave") {
-          WelcomeView()
-        }
-        Tab ("Exercise 1", systemImage: "1.circle") {
-          ForEach(0 ..< 4) { index in
-            ExerciseView(index: index)
-          }
-        }
-//        Tab ("Exercise 2", systemImage: "2.circle") {
-//          Text("Exercise 2")
-//        }
+  var body: some View {
+    TabView {
+      Tab ("Welcome", systemImage: "hand.wave") {
+        WelcomeView()
       }
-            .tabViewStyle(.page)
-            .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
-
-
+      
+      ForEach(0 ..< 4) { index in
+        Tab ("Exercise 1", systemImage: "\(index+1).circle") {
+          ExerciseView(index: index)
+        }
+      }
     }
+    .tabViewStyle(.page)
+    .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
+    
+    
+  }
 }
 
 #Preview {
-    ContentView()
+  ContentView()
 }
