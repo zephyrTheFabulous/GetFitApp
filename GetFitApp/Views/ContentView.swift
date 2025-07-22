@@ -13,7 +13,7 @@ struct ContentView: View {
       Tab ("Welcome", systemImage: "hand.wave") {
         WelcomeView()
       }
-      
+
       ForEach(0 ..< 4) { index in
         Tab ("Exercise 1", systemImage: "\(index+1).circle") {
           ExerciseView(index: index)
@@ -22,8 +22,8 @@ struct ContentView: View {
     }
     .tabViewStyle(.page)
     .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
-    
-    
+
+
   }
 }
 
