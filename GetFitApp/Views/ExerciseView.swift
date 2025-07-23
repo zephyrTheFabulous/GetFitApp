@@ -16,19 +16,39 @@ struct ExerciseView: View {
     Exercise.exercises[index]
   }
 
+  let interval: TimeInterval = 30 // for TimerView
+
   var body: some View {
     GeometryReader { geo in
       VStack {
+        // Header
         HeaderView(exerciseName: exercise.exerciseName)
           .padding(.bottom, 16)
 
+        // VideoPlayer
         VideoPlayerView(videoName: exercise.videoName)
-          .frame(height: geo.size.height * 0.45)
+          .frame(height: geo.size.height * 0.45) // 45% of screen
 
-        Text("Timer")
-        Text("Start/Done")
+        // Timer
+        Text(Date().addingTimeInterval(interval),style: .timer)
+          .font(.system(size: geo.size.height * 0.07)) // 7% of screen
+
+        // Start/Done button
+        Button("Start/Done") {
+
+        }
+        .font(.title3)
+        .padding()
+
+        // Rating buttons
         Text("Rating")
-        Text("History button")
+
+        // History button
+        Spacer()
+        Button("History") {
+
+        }
+
       }
     }
   }
