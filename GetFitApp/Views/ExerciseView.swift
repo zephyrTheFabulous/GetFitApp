@@ -17,19 +17,19 @@ struct ExerciseView: View {
   }
 
   var body: some View {
-    VStack {
-      HeaderView(exerciseName: exercise.exerciseName)
+    GeometryReader { geo in
+      VStack {
+        HeaderView(exerciseName: exercise.exerciseName)
+          .padding(.bottom, 16)
 
-      if let url = Bundle.main.url(forResource: exercise.videoName, withExtension: "mp4") {
-        VideoPlayer(player: AVPlayer(url: url))
-      } else {
-        ContentUnavailableView("Couldn't find \(exercise.videoName).mp4", systemImage: "xmark.rectangle")
-          .foregroundStyle(.red)
+        VideoPlayerView(videoName: exercise.videoName)
+          .frame(height: geo.size.height * 0.45)
+
+        Text("Timer")
+        Text("Start/Done")
+        Text("Rating")
+        Text("History button")
       }
-      Text("Timer")
-      Text("Start/Done")
-      Text("Rating")
-      Text("History button")
     }
   }
 }
@@ -37,5 +37,7 @@ struct ExerciseView: View {
 #Preview {
   ExerciseView(index: 0)
 }
+
+
 
 

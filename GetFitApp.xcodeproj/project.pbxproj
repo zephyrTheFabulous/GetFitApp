@@ -13,6 +13,7 @@
 		2999922D2E2E98560017BC22 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 299992292E2E98560017BC22 /* Assets.xcassets */; };
 		2999922E2E2E98560017BC22 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2999922A2E2E98560017BC22 /* ContentView.swift */; };
 		2999922F2E2E98560017BC22 /* GetFitAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2999922B2E2E98560017BC22 /* GetFitAppApp.swift */; };
+		29C114D22E316DC600CF1B87 /* VideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C114D12E316DC600CF1B87 /* VideoPlayerView.swift */; };
 		29E57E612E2EBD1E00DD0A0D /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E57E602E2EBD1E00DD0A0D /* WelcomeView.swift */; };
 		29E57E632E2EBD2800DD0A0D /* ExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E57E622E2EBD2800DD0A0D /* ExerciseView.swift */; };
 		29E57E692E2EBF7200DD0A0D /* stretch.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 29E57E652E2EBF7200DD0A0D /* stretch.mp4 */; };
@@ -29,6 +30,7 @@
 		299992292E2E98560017BC22 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2999922A2E2E98560017BC22 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2999922B2E2E98560017BC22 /* GetFitAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFitAppApp.swift; sourceTree = "<group>"; };
+		29C114D12E316DC600CF1B87 /* VideoPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerView.swift; sourceTree = "<group>"; };
 		29E57E602E2EBD1E00DD0A0D /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		29E57E622E2EBD2800DD0A0D /* ExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseView.swift; sourceTree = "<group>"; };
 		29E57E652E2EBF7200DD0A0D /* stretch.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = stretch.mp4; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 				29793E382E304B6F00BE0BEB /* TabViewStyleVariation.swift */,
 				29E57E602E2EBD1E00DD0A0D /* WelcomeView.swift */,
 				29E57E622E2EBD2800DD0A0D /* ExerciseView.swift */,
+				29C114D12E316DC600CF1B87 /* VideoPlayerView.swift */,
 				297BE2AE2E302500008AA6E7 /* HeaderView.swift */,
 			);
 			path = Views;
@@ -182,6 +185,7 @@
 				2999922F2E2E98560017BC22 /* GetFitAppApp.swift in Sources */,
 				29793E372E3033AC00BE0BEB /* Exercise.swift in Sources */,
 				29793E392E304B6F00BE0BEB /* TabViewStyleVariation.swift in Sources */,
+				29C114D22E316DC600CF1B87 /* VideoPlayerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
