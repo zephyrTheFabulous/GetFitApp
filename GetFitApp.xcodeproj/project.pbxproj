@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		293FC2CB2E31933D0000DE13 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293FC2CA2E31933D0000DE13 /* RatingView.swift */; };
 		29793E372E3033AC00BE0BEB /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29793E362E3033AC00BE0BEB /* Exercise.swift */; };
 		29793E392E304B6F00BE0BEB /* TabViewStyleVariation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29793E382E304B6F00BE0BEB /* TabViewStyleVariation.swift */; };
 		297BE2AF2E302500008AA6E7 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297BE2AE2E302500008AA6E7 /* HeaderView.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		293FC2CA2E31933D0000DE13 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 		29793E362E3033AC00BE0BEB /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		29793E382E304B6F00BE0BEB /* TabViewStyleVariation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewStyleVariation.swift; sourceTree = "<group>"; };
 		297BE2AE2E302500008AA6E7 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 				29793E382E304B6F00BE0BEB /* TabViewStyleVariation.swift */,
 				29E57E602E2EBD1E00DD0A0D /* WelcomeView.swift */,
 				29E57E622E2EBD2800DD0A0D /* ExerciseView.swift */,
+				293FC2CA2E31933D0000DE13 /* RatingView.swift */,
 				29C114D12E316DC600CF1B87 /* VideoPlayerView.swift */,
 				297BE2AE2E302500008AA6E7 /* HeaderView.swift */,
 			);
@@ -181,6 +184,7 @@
 				297BE2AF2E302500008AA6E7 /* HeaderView.swift in Sources */,
 				29E57E632E2EBD2800DD0A0D /* ExerciseView.swift in Sources */,
 				2999922E2E2E98560017BC22 /* ContentView.swift in Sources */,
+				293FC2CB2E31933D0000DE13 /* RatingView.swift in Sources */,
 				29E57E612E2EBD1E00DD0A0D /* WelcomeView.swift in Sources */,
 				2999922F2E2E98560017BC22 /* GetFitAppApp.swift in Sources */,
 				29793E372E3033AC00BE0BEB /* Exercise.swift in Sources */,
