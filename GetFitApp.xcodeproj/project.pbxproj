@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		29793E372E3033AC00BE0BEB /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29793E362E3033AC00BE0BEB /* Exercise.swift */; };
+		29793E392E304B6F00BE0BEB /* TabViewStyleVariation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29793E382E304B6F00BE0BEB /* TabViewStyleVariation.swift */; };
 		297BE2AF2E302500008AA6E7 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297BE2AE2E302500008AA6E7 /* HeaderView.swift */; };
 		2999922D2E2E98560017BC22 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 299992292E2E98560017BC22 /* Assets.xcassets */; };
 		2999922E2E2E98560017BC22 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2999922A2E2E98560017BC22 /* ContentView.swift */; };
@@ -20,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		29793E362E3033AC00BE0BEB /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
+		29793E382E304B6F00BE0BEB /* TabViewStyleVariation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewStyleVariation.swift; sourceTree = "<group>"; };
 		297BE2AE2E302500008AA6E7 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		2999921B2E2E98460017BC22 /* GetFitApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GetFitApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		299992292E2E98560017BC22 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -44,6 +48,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		297B07E12E314F30004EA66E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				29793E362E3033AC00BE0BEB /* Exercise.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		299992122E2E98460017BC22 = {
 			isa = PBXGroup;
 			children = (
@@ -70,6 +82,7 @@
 				2999922B2E2E98560017BC22 /* GetFitAppApp.swift */,
 				299992292E2E98560017BC22 /* Assets.xcassets */,
 				29E57E642E2EBD7500DD0A0D /* Views */,
+				297B07E12E314F30004EA66E /* Model */,
 			);
 			path = GetFitApp;
 			sourceTree = "<group>";
@@ -78,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				2999922A2E2E98560017BC22 /* ContentView.swift */,
+				29793E382E304B6F00BE0BEB /* TabViewStyleVariation.swift */,
 				29E57E602E2EBD1E00DD0A0D /* WelcomeView.swift */,
 				29E57E622E2EBD2800DD0A0D /* ExerciseView.swift */,
 				297BE2AE2E302500008AA6E7 /* HeaderView.swift */,
@@ -166,6 +180,8 @@
 				2999922E2E2E98560017BC22 /* ContentView.swift in Sources */,
 				29E57E612E2EBD1E00DD0A0D /* WelcomeView.swift in Sources */,
 				2999922F2E2E98560017BC22 /* GetFitAppApp.swift in Sources */,
+				29793E372E3033AC00BE0BEB /* Exercise.swift in Sources */,
+				29793E392E304B6F00BE0BEB /* TabViewStyleVariation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

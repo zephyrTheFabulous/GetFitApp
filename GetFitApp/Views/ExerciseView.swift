@@ -6,16 +6,26 @@
   //
 
 import SwiftUI
+import AVKit
 
 struct ExerciseView: View {
-  let videoNames = ["stretch", "run", "stairs", "jump"]
-  let exerciseNames = ["Stretching", "Running", "Stairs", "Jumps"]
+  
   let index: Int // what is going to be shown determined by index
   
+  var exercise: Exercise { // access to name from enum for HeaderView
+    Exercise.exercises[index]
+  }
+
   var body: some View {
     VStack {
-      HeaderView(exerciseName: exerciseNames[index])
-      Text("Video player")
+      HeaderView(exerciseName: exercise.exerciseName)
+
+      if let url = Bundle.main.url(forResource: exercise.videoName, withExtension: "mp4") {
+        VideoPlayer(player: AVPlayer(url: url))
+      } else {
+        ContentUnavailableView("Couldn't find \(exercise.videoName).mp4", systemImage: "xmark.rectangle")
+          .foregroundStyle(.red)
+      }
       Text("Timer")
       Text("Start/Done")
       Text("Rating")
