@@ -8,13 +8,8 @@
 import SwiftUI
 
 struct HistoryView: View {
-  let today = Date()
-  let yesterday = Date().addingTimeInterval(-86400)
 
-    // sample data for 2 days
-  let exercises1 = ["Stretch", "Run", "Stairs", "Jumps"]
-  let exercises2 = ["Stretch", "Run", "Stairs"]
-
+  let history = HistoryStore()
 
   var body: some View {
     VStack {
@@ -23,23 +18,21 @@ struct HistoryView: View {
         .padding()
 
       Form {
-        // Collection of days. Sample data
-        Section {
-          ForEach(exercises1, id: \.self) { each in
-            Text(each)
+        // Collection of days. Sample data from HistoryStore
+        ForEach(history.exerciseDays) { day in
+          Section {
+            // EXERCISE NAME
+            ForEach(day.exercises, id: \.self) { exercise in
+              Text(exercise)
+            }
+          } header: {
+            // DATE
+            Text(day.date.formatted(as: "MMM d"))
+              .font(.headline)
           }
-        } header: {
-          Text(today.formatted(as: "MMM d"))
-            .font(.headline)
         }
-        Section {
-          ForEach(exercises2, id: \.self) { each in
-            Text(each)
-          }
-        } header: {
-          Text(yesterday.formatted(as: "MMM d"))
-            .font(.headline)
-        }
+        // iteration over all available(in sample data) days and each day is iterated again to show exercises
+        // ExerciseDay conform to Identifiable, that's why we don't need id: \.self
       }
     }
   }

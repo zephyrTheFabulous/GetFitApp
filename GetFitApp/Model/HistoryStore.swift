@@ -28,6 +28,7 @@ struct HistoryStore {
 }
 
 // Sample data for HistoryStore. Not part of the core definition
+// function that just fills in the store with sample data
 extension HistoryStore {
   mutating func createDevData() {
     exerciseDays = [
