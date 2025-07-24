@@ -8,14 +8,15 @@
 import SwiftUI
 
 struct HeaderView: View {
-  let exerciseName: String
+  let titleName: String
 
   var body: some View {
     VStack {
-      Text(exerciseName)
+      Text(titleName)
         .font(.largeTitle)
 
       HStack {
+        Image(systemName: "hand.wave")
         ForEach(1 ..< 5) { item in
           Image(systemName: "\(item).circle")
         }
@@ -26,5 +27,5 @@ struct HeaderView: View {
   }
 }
 #Preview(traits: .sizeThatFitsLayout) {
-  HeaderView(exerciseName: "Jumps")
+  HeaderView(titleName: "Jumps")
 }

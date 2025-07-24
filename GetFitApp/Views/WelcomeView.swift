@@ -9,7 +9,32 @@ import SwiftUI
 
 struct WelcomeView: View {
     var body: some View {
-        HeaderView(exerciseName: "Welcome")
+      ZStack {
+        VStack {
+          HeaderView(titleName: "Welcome")
+
+            // History button
+          Spacer()
+          Button("History") {
+
+          }
+        } //: VS
+        VStack {
+          HStack (alignment: .top)  {
+            Image("running")
+              .resizable()
+              .scaledToFill()
+              .frame(width: 240, height: 240)
+              .clipShape(Circle())
+            VStack(alignment: .leading) {
+              Text("Get fit")
+                .font(.largeTitle)
+              Text("with high intensity interval training")
+                .font(.headline)
+            }
+          } //: HS
+        }
+      } //: ZS
     }
 }
 
