@@ -10,6 +10,7 @@
 		290B23A42E32287E00369DA1 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290B23A32E32287E00369DA1 /* HistoryView.swift */; };
 		290B23A72E322C0800369DA1 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290B23A62E322C0800369DA1 /* DateExtension.swift */; };
 		293FC2CB2E31933D0000DE13 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293FC2CA2E31933D0000DE13 /* RatingView.swift */; };
+		2960E0112E32A17D00374992 /* HistoryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2960E0102E32A17D00374992 /* HistoryStore.swift */; };
 		29793E372E3033AC00BE0BEB /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29793E362E3033AC00BE0BEB /* Exercise.swift */; };
 		29793E392E304B6F00BE0BEB /* TabViewStyleVariation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29793E382E304B6F00BE0BEB /* TabViewStyleVariation.swift */; };
 		297BE2AF2E302500008AA6E7 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297BE2AE2E302500008AA6E7 /* HeaderView.swift */; };
@@ -29,6 +30,7 @@
 		290B23A32E32287E00369DA1 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		290B23A62E322C0800369DA1 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		293FC2CA2E31933D0000DE13 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
+		2960E0102E32A17D00374992 /* HistoryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryStore.swift; sourceTree = "<group>"; };
 		29793E362E3033AC00BE0BEB /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		29793E382E304B6F00BE0BEB /* TabViewStyleVariation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewStyleVariation.swift; sourceTree = "<group>"; };
 		297BE2AE2E302500008AA6E7 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 			isa = PBXGroup;
 			children = (
 				29793E362E3033AC00BE0BEB /* Exercise.swift */,
+				2960E0102E32A17D00374992 /* HistoryStore.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -95,10 +98,10 @@
 		2999922C2E2E98560017BC22 /* GetFitApp */ = {
 			isa = PBXGroup;
 			children = (
-				290B23A52E322BB700369DA1 /* Extensions */,
 				2999922B2E2E98560017BC22 /* GetFitAppApp.swift */,
 				299992292E2E98560017BC22 /* Assets.xcassets */,
 				29E57E642E2EBD7500DD0A0D /* Views */,
+				290B23A52E322BB700369DA1 /* Extensions */,
 				297B07E12E314F30004EA66E /* Model */,
 			);
 			path = GetFitApp;
@@ -199,6 +202,7 @@
 				29E57E632E2EBD2800DD0A0D /* ExerciseView.swift in Sources */,
 				2999922E2E2E98560017BC22 /* ContentView.swift in Sources */,
 				293FC2CB2E31933D0000DE13 /* RatingView.swift in Sources */,
+				2960E0112E32A17D00374992 /* HistoryStore.swift in Sources */,
 				29E57E612E2EBD1E00DD0A0D /* WelcomeView.swift in Sources */,
 				2999922F2E2E98560017BC22 /* GetFitAppApp.swift in Sources */,
 				290B23A72E322C0800369DA1 /* DateExtension.swift in Sources */,

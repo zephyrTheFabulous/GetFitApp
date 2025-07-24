@@ -23,18 +23,24 @@ struct HistoryView: View {
         .padding()
 
       Form {
+        // Collection of days. Sample data
         Section {
-          
+          ForEach(exercises1, id: \.self) { each in
+            Text(each)
+          }
         } header: {
           Text(today.formatted(as: "MMM d"))
+            .font(.headline)
         }
         Section {
-          
+          ForEach(exercises2, id: \.self) { each in
+            Text(each)
+          }
         } header: {
           Text(yesterday.formatted(as: "MMM d"))
+            .font(.headline)
         }
       }
-      .font(.headline)
     }
   }
 }
