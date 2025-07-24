@@ -34,6 +34,15 @@ struct HistoryView: View {
         // iteration over all available(in sample data) days and each day is iterated again to show exercises
         // ExerciseDay conform to Identifiable, that's why we don't need id: \.self
       }
+    } //: VS
+    .overlay(alignment: .topTrailing) {
+      Button {
+
+      } label: {
+        Image(systemName: "xmark.circle")
+          .font(.title)
+          .padding(.trailing, 16)
+      }
     }
   }
 }
