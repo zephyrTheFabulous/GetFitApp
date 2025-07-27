@@ -20,9 +20,21 @@ struct TabViewStyleVariation: View {
                 }
               }
               .tabViewStyle(.page)
+
+      // looks the same, but no need for .enumerated
+//              TabView {
+//                ForEach(Array(Exercise.exercises.indices), id: \.self) { index in
+//                  Tab ("Exercise 1", systemImage: "\(index+1).circle") {
+//                    ExerciseView(selectedTab: $selectedTab, index: index)
+//                  }
+//                }
+//              }
+//              .tabViewStyle(.page(indexDisplayMode: .always))
+
     }
 }
 
 #Preview {
   TabViewStyleVariation(selectedTab: .constant(0))
+    .background(.teal)
 }

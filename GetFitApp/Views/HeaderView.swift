@@ -20,7 +20,11 @@ struct HeaderView: View {
         ForEach(Exercise.exercises.indices, id: \.self) { index in
           let fill = index == selectedTab ? ".fill" : ""
           Image(systemName: "\(index + 1).circle\(fill)")
-        } // if chosen tab is the same as index, we apply .fill to SFSymbol
+            .onTapGesture {
+              selectedTab = index
+            }
+        } // if chosen tab is the same as index, we apply .fill to SFSymbol. // selectedTab becomes the number of array element
+
       }
       .font(.title2)
 
