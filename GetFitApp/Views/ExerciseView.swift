@@ -19,6 +19,10 @@ struct ExerciseView: View {
 
   let interval: TimeInterval = 30 // for TimerView
 
+  // check whether this is the last exercise
+  var lastExercise: Bool {
+    index + 1 == Exercise.exercises.count
+  }
 
 
   var body: some View {
@@ -37,8 +41,14 @@ struct ExerciseView: View {
           .font(.system(size: geo.size.height * 0.07)) // 7% of screen
 
         // Start/Done button
-        Button("Start/Done") {
+        HStack (alignment: .center, spacing: 150)  {
+          Button("Start") {
+            
+          }
 
+          Button("Done") {
+            selectedTab = lastExercise ? 9 : selectedTab + 1
+          } // if it's the last exercise, returns back to home page(WelcomeView), otherwise scrolls to next exercise
         }
         .font(.title3)
         .padding()
