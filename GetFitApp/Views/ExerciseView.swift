@@ -11,6 +11,7 @@ import AVKit
 struct ExerciseView: View {
   @Binding var selectedTab: Int
   @State private var rating = 0
+  @State private var showHistory = false
 
   let index: Int // what is going to be shown determined by index
 
@@ -67,7 +68,10 @@ struct ExerciseView: View {
         // History button
         Spacer()
         Button("History") {
-
+          showHistory.toggle()
+        }
+        .sheet(isPresented: $showHistory) {
+          HistoryView(showHistory: $showHistory)
         }
       }
     }

@@ -10,6 +10,7 @@ import SwiftUI
 // No actions on Welcome page beside Get Started button which selects first exercise page
 struct WelcomeView: View {
   @Binding var selectedTab: Int
+  @State private var showHistory = false
 
   var body: some View {
     ZStack {
@@ -18,8 +19,12 @@ struct WelcomeView: View {
 
           // History button
         Spacer()
-        Button("History") {
 
+        Button("History") {
+          showHistory.toggle()
+        }
+        .sheet(isPresented: $showHistory) {
+          HistoryView(showHistory: $showHistory)
         }
       } //: VS
       VStack {
