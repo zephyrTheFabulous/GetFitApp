@@ -24,12 +24,24 @@ struct ExerciseView: View {
     index + 1 == Exercise.exercises.count
   }
 
+  var startButton: some View {
+    Button("Start Exercise") {
+
+    }
+  }
+
+  var doneButton: some View {
+    Button("Done") {
+      selectedTab = lastExercise ? 9 : selectedTab + 1
+    } // if it's the last exercise, returns back to home page(WelcomeView), otherwise scrolls to next exercise
+  }
+
 
   var body: some View {
     GeometryReader { geo in
       VStack {
         // Header
-        HeaderView(titleName: exercise.exerciseName)
+        HeaderView(selectedTab: $selectedTab, titleName: exercise.exerciseName)
           .padding(.bottom, 16)
 
         // VideoPlayer
@@ -42,13 +54,8 @@ struct ExerciseView: View {
 
         // Start/Done button
         HStack (alignment: .center, spacing: 150)  {
-          Button("Start") {
-            
-          }
-
-          Button("Done") {
-            selectedTab = lastExercise ? 9 : selectedTab + 1
-          } // if it's the last exercise, returns back to home page(WelcomeView), otherwise scrolls to next exercise
+          startButton
+          doneButton
         }
         .font(.title3)
         .padding()

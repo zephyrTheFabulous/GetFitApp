@@ -14,7 +14,7 @@ struct WelcomeView: View {
   var body: some View {
     ZStack {
       VStack {
-        HeaderView(titleName: "Welcome")
+        HeaderView(selectedTab: $selectedTab, titleName: "Welcome")
 
           // History button
         Spacer()

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct HeaderView: View {
+  @Binding var selectedTab: Int
   let titleName: String
 
   var body: some View {
@@ -16,10 +17,10 @@ struct HeaderView: View {
         .font(.largeTitle)
 
       HStack {
-        Image(systemName: "hand.wave")
-        ForEach(1 ..< 5) { item in
-          Image(systemName: "\(item).circle")
-        }
+        ForEach(Exercise.exercises.indices, id: \.self) { index in
+          let fill = index == selectedTab ? ".fill" : ""
+          Image(systemName: "\(index + 1).circle\(fill)")
+        } // if chosen tab is the same as index, we apply .fill to SFSymbol
       }
       .font(.title2)
 
@@ -27,5 +28,5 @@ struct HeaderView: View {
   }
 }
 #Preview(traits: .sizeThatFitsLayout) {
-  HeaderView(titleName: "Jumps")
+  HeaderView(selectedTab: .constant(0), titleName: "Jumps")
 }
