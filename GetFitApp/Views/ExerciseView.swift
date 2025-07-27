@@ -10,6 +10,7 @@ import AVKit
 
 struct ExerciseView: View {
   @Binding var selectedTab: Int
+  @State private var rating = 0
 
   let index: Int // what is going to be shown determined by index
 
@@ -61,7 +62,7 @@ struct ExerciseView: View {
         .padding()
 
         // Rating buttons
-        RatingView()
+        RatingView(rating: $rating )
 
         // History button
         Spacer()

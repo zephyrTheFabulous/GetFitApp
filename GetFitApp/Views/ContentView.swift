@@ -28,7 +28,7 @@ struct ContentView: View {
 
 #Preview {
   ZStack {
-    Color.teal.ignoresSafeArea()
+    Color.teal.opacity(0.25).ignoresSafeArea()
     ContentView()
   }
 }

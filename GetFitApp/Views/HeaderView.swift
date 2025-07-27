@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// HeaderView substitutes for TabView page indicators
 struct HeaderView: View {
   @Binding var selectedTab: Int
   let titleName: String
