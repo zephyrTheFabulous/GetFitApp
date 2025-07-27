@@ -12,6 +12,7 @@ struct ExerciseView: View {
   @Binding var selectedTab: Int
   @State private var rating = 0
   @State private var showHistory = false
+  @State private var showSuccessPage = false
 
   let index: Int // what is going to be shown determined by index
 
@@ -34,8 +35,12 @@ struct ExerciseView: View {
 
   var doneButton: some View {
     Button("Done") {
-      selectedTab = lastExercise ? 9 : selectedTab + 1
-    } // if it's the last exercise, returns back to home page(WelcomeView), otherwise scrolls to next exercise
+      if lastExercise {
+        showSuccessPage.toggle()
+      } else {
+        selectedTab += 1
+      }
+    } // if it's the last exercise, opens SuccessView, otherwise scrolls to next exercise
   }
 
 
@@ -58,6 +63,10 @@ struct ExerciseView: View {
         HStack (alignment: .center, spacing: 150)  {
           startButton
           doneButton
+            .sheet(isPresented: $showSuccessPage) {
+              SuccessView(selectedTab: $selectedTab)
+                .presentationDetents([.medium,.large])
+            }
         }
         .font(.title3)
         .padding()
