@@ -7,7 +7,10 @@
 
 import SwiftUI
 
+// No actions on Welcome page beside Get Started button which selects first exercise page
 struct WelcomeView: View {
+  @Binding var selectedTab: Int
+
   var body: some View {
     ZStack {
       VStack {
@@ -34,7 +37,7 @@ struct WelcomeView: View {
           }
         } //: HS
         Button {
-
+          selectedTab = 0
         } label: {
           Text("Get Started")
           Image(systemName: "chevron.right.circle")
@@ -48,5 +51,5 @@ struct WelcomeView: View {
 }
 
 #Preview {
-  WelcomeView()
+  WelcomeView(selectedTab: .constant(9))
 }

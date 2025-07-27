@@ -9,14 +9,17 @@ import SwiftUI
 import AVKit
 
 struct ExerciseView: View {
-  
+  @Binding var selectedTab: Int
+
   let index: Int // what is going to be shown determined by index
-  
+
   var exercise: Exercise { // access to name from enum for HeaderView
     Exercise.exercises[index]
   }
 
   let interval: TimeInterval = 30 // for TimerView
+
+
 
   var body: some View {
     GeometryReader { geo in
@@ -48,14 +51,13 @@ struct ExerciseView: View {
         Button("History") {
 
         }
-
       }
     }
   }
 }
 
 #Preview {
-  ExerciseView(index: 0)
+  ExerciseView(selectedTab: .constant(1), index: 1)
 }
 
 

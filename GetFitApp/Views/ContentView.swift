@@ -8,15 +8,21 @@
 import SwiftUI
 
 struct ContentView: View {
+  @State private var selectedTab = 9 // for WelcomeView page
+
   var body: some View {
-    
       //       After refactoring
-    TabView {
+    TabView (selection: $selectedTab) {
+      WelcomeView(selectedTab: $selectedTab)
+        .tag(9)
+
       ForEach(Exercise.exercises.indices, id: \.self) { index in // .indices means "each index"
-        ExerciseView(index: index)
+        ExerciseView(selectedTab: $selectedTab, index: index)
+          .tag(index) // each exercise is tagged with index
       }
-    }
+    } //: TAB
     .tabViewStyle(.page(indexDisplayMode: .never))
+
   }
 }
 
@@ -27,9 +33,9 @@ struct ContentView: View {
   }
 }
 
-//#Preview("Variation") {
-//  ZStack {
-//    Color.teal.ignoresSafeArea()
-//    TabViewStyleVariation()
-//  }
-//}
+  //#Preview("Variation") {
+  //  ZStack {
+  //    Color.teal.ignoresSafeArea()
+  //    TabViewStyleVariation()
+  //  }
+  //}
