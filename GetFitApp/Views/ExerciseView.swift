@@ -14,13 +14,16 @@ struct ExerciseView: View {
   @State private var showHistory = false
   @State private var showSuccessPage = false
 
+    //  let interval: TimeInterval = 30 // for TimerView // changed to
+  @State private var timerIsOn = true // becomes false when timer reaches zero
+  @State private var showTimer = false
+
   let index: Int // what is going to be shown determined by index
 
   var exercise: Exercise { // access to name from enum for HeaderView
     Exercise.exercises[index]
   }
 
-  let interval: TimeInterval = 30 // for TimerView
 
   // check whether this is the last exercise
   var lastExercise: Bool {
@@ -29,12 +32,14 @@ struct ExerciseView: View {
 
   var startButton: some View {
     Button("Start Exercise") {
-
+      showTimer.toggle()
     }
   }
 
   var doneButton: some View {
     Button("Done") {
+      timerIsOn = true
+      showTimer.toggle()
       if lastExercise {
         showSuccessPage.toggle()
       } else {
@@ -56,13 +61,22 @@ struct ExerciseView: View {
           .frame(height: geo.size.height * 0.45) // 45% of screen
 
         // Timer
-        Text(Date().addingTimeInterval(interval),style: .timer)
-          .font(.system(size: geo.size.height * 0.07)) // 7% of screen
+//          Text(Date().addingTimeInterval(interval),style: .timer)
+//  .font(.system(size: geo.size.height * 0.07)) // 7% of screen
+//       change to
+        if showTimer { // TimerView appears when showTimer becomes true
+          TimerView(
+            timerIsOn: $timerIsOn,
+            size: geo.size.height * 0.07
+          )
+        }
 
-        // Start/Done button
+
+        // Start & Done buttons
         HStack (alignment: .center, spacing: 150)  {
           startButton
           doneButton
+            .disabled(timerIsOn)
             .sheet(isPresented: $showSuccessPage) {
               SuccessView(selectedTab: $selectedTab)
                 .presentationDetents([.medium,.large])
