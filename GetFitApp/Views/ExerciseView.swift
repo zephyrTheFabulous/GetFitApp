@@ -60,19 +60,7 @@ struct ExerciseView: View {
         VideoPlayerView(videoName: exercise.videoName)
           .frame(height: geo.size.height * 0.45) // 45% of screen
 
-        // Timer
-//          Text(Date().addingTimeInterval(interval),style: .timer)
-//  .font(.system(size: geo.size.height * 0.07)) // 7% of screen
-//       change to
-        if showTimer { // TimerView appears when showTimer becomes true
-          TimerView(
-            timerIsOn: $timerIsOn,
-            size: geo.size.height * 0.07
-          )
-        }
-
-
-        // Start & Done buttons
+          // Start & Done buttons
         HStack (alignment: .center, spacing: 150)  {
           startButton
           doneButton
@@ -85,11 +73,23 @@ struct ExerciseView: View {
         .font(.title3)
         .padding()
 
+        // Timer
+//          Text(Date().addingTimeInterval(interval),style: .timer)
+//  .font(.system(size: geo.size.height * 0.07)) // 7% of screen
+//       change to
+        if showTimer { // TimerView appears when showTimer becomes true
+          TimerView(
+            timerIsOn: $timerIsOn,
+            size: geo.size.height * 0.07
+          )
+        }
+
+        Spacer()
         // Rating buttons
         RatingView(rating: $rating )
+          .padding()
 
         // History button
-        Spacer()
         Button("History") {
           showHistory.toggle()
         }
