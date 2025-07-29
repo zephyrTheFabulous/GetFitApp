@@ -21,6 +21,7 @@ struct ContentView: View {
           .tag(index) // each exercise is tagged with index
       }
     } //: TAB
+    .environment(HistoryStore()) // gives access to HistoryStore to all subviews of TabView
     .tabViewStyle(.page(indexDisplayMode: .never))
 
   }

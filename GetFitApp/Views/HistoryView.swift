@@ -9,8 +9,8 @@ import SwiftUI
 
 struct HistoryView: View {
   @Binding var showHistory: Bool
-  let history = HistoryStore()
-  
+  @Environment(HistoryStore.self) private var history
+
   var body: some View {
     VStack {
       Text("History")
@@ -49,4 +49,5 @@ struct HistoryView: View {
 
 #Preview {
   HistoryView(showHistory: .constant(true))
+    .environment(HistoryStore())
 }

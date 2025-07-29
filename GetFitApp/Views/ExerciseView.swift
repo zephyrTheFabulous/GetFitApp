@@ -13,6 +13,8 @@ struct ExerciseView: View {
   @State private var rating = 0
   @State private var showHistory = false
   @State private var showSuccessPage = false
+  @Environment(HistoryStore.self) private var history
+
 
     //  let interval: TimeInterval = 30 // for TimerView // changed to
   @State private var timerIsOn = true // becomes false when timer reaches zero
@@ -38,6 +40,7 @@ struct ExerciseView: View {
 
   var doneButton: some View {
     Button("Done") {
+      history.addDoneExercise(Exercise.exercises[index].exerciseName) // add exercise to array
       timerIsOn = true
       showTimer.toggle()
       if lastExercise {
@@ -103,6 +106,7 @@ struct ExerciseView: View {
 
 #Preview {
   ExerciseView(selectedTab: .constant(1), index: 1)
+    .environment(HistoryStore())
 }
 
 
