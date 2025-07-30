@@ -16,7 +16,7 @@ struct ExerciseDay: Identifiable {
   var exercises: [String] = []
 }
 
-@Observable class HistoryStore {
+ struct HistoryStore {
   var exerciseDays: [ExerciseDay] = []
 
   // to exclude from release build
@@ -27,7 +27,7 @@ struct ExerciseDay: Identifiable {
   }
 
   // Add exercise on pressing "Done" button
-  func addDoneExercise(_ exerciseName: String) {
+  mutating func addDoneExercise(_ exerciseName: String) {
     let today = Date()
     if today.isSameDay(as: exerciseDays[0].date) {
       exerciseDays[0].exercises.append(exerciseName)
@@ -35,14 +35,17 @@ struct ExerciseDay: Identifiable {
       exerciseDays.insert(ExerciseDay(date: today, exercises: [exerciseName]), at: 0)
     }
     // if today is the same as this date, append the current exerciseName to the exercises array of this exerciseDay
-    // if today is a new day, creates a new ExerciseDay and inserts it at the beginning of the exerciseDays
+    // if today is a new day, creates a new ExerciseDay and inserts exercise at the beginning of the exerciseDays
+
+      // "if" condition is the same as:
+      // if Date().yearMonthDay == exerciseDays[0].date.yearMonthDay {
   }
 }
 
 // Sample data for HistoryStore. Not part of the core definition
 // function that just fills in the store with sample data
 extension HistoryStore {
-   func createDevData() {
+   mutating func createDevData() {
     exerciseDays = [
       .init( // yesterday
         date: Date().addingTimeInterval(-86400),
