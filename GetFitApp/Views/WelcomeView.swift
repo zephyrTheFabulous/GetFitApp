@@ -12,6 +12,8 @@ struct WelcomeView: View {
   @Binding var selectedTab: Int
   @State private var showHistory = false
 
+  let history: HistoryStore
+
   var body: some View {
     ZStack {
       VStack {
@@ -24,7 +26,7 @@ struct WelcomeView: View {
           showHistory.toggle()
         }
         .sheet(isPresented: $showHistory) {
-          HistoryView(showHistory: $showHistory)
+          HistoryView(showHistory: $showHistory, history: history)
         }
       } //: VS
       VStack {
@@ -55,6 +57,6 @@ struct WelcomeView: View {
   }
 }
 
-#Preview {
-  WelcomeView(selectedTab: .constant(9))
-}
+//#Preview {
+//  WelcomeView(selectedTab: .constant(9))
+//}

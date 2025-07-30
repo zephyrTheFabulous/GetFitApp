@@ -13,7 +13,9 @@ struct ExerciseView: View {
   @State private var rating = 0
   @State private var showHistory = false
   @State private var showSuccessPage = false
-  @Environment(HistoryStore.self) private var history
+
+//  @Environment(HistoryStore.self) private var history
+  @Binding var history: HistoryStore
 
 
     //  let interval: TimeInterval = 30 // for TimerView // changed to
@@ -97,17 +99,17 @@ struct ExerciseView: View {
           showHistory.toggle()
         }
         .sheet(isPresented: $showHistory) {
-          HistoryView(showHistory: $showHistory)
+          HistoryView(showHistory: $showHistory, history: $history)
         }
       }
     }
   }
 }
 
-#Preview {
-  ExerciseView(selectedTab: .constant(1), index: 1)
-    .environment(HistoryStore())
-}
+//#Preview {
+//  ExerciseView(selectedTab: .constant(1), index: 1)
+////    .environment(HistoryStore())
+//}
 
 
 

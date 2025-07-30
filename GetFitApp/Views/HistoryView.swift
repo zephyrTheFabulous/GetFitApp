@@ -9,7 +9,15 @@ import SwiftUI
 
 struct HistoryView: View {
   @Binding var showHistory: Bool
-  @Environment(HistoryStore.self) private var history
+
+  // why change
+//  let history = HistoryStore()
+  // to
+//  @Environment(HistoryStore.self) private var history
+  // if we're only going to read that store?
+  // because otherwise HistoryView doesn't show any changes made to HistoryStore
+
+  let history: HistoryStore
 
   var body: some View {
     VStack {
@@ -48,6 +56,6 @@ struct HistoryView: View {
 }
 
 #Preview {
-  HistoryView(showHistory: .constant(true))
-    .environment(HistoryStore())
+  HistoryView(showHistory: .constant(true), history: HistoryStore())
+//    .environment(HistoryStore())
 }
