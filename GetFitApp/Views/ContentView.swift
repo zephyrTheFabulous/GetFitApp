@@ -8,7 +8,10 @@
 import SwiftUI
 
 struct ContentView: View {
-  @State private var selectedTab = 9 // for WelcomeView page
+    // change
+//  @State private var selectedTab = 9 // for WelcomeView page
+    // to
+  @SceneStorage("selectedTab") private var selectedTab = 9 // to persist scene state
 
   var body: some View {
       //       After refactoring

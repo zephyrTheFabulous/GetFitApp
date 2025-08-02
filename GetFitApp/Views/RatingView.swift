@@ -40,7 +40,13 @@ struct RatingView: View {
     }
   }
 
-    var body: some View {
+  fileprivate func convertRating() {
+    let index = ratings.index(ratings.startIndex, offsetBy: exerciseIndex) // exercise index choses which storage to use for rating
+    let character = ratings[index]
+    rating = character.wholeNumberValue ?? 0
+  }
+  
+  var body: some View {
       HStack {
         ForEach(1 ..< maximumRating + 1, id: \.self) { index in
           Image(systemName: "star.hexagon")
@@ -52,9 +58,10 @@ struct RatingView: View {
               updateRating(index: index)
             }
             .onAppear {
-              let index = ratings.index(ratings.startIndex, offsetBy: exerciseIndex) // exercise index choses which storage to use for rating
-              let character = ratings[index]
-              rating = character.wholeNumberValue ?? 0
+              convertRating()
+            }
+            .onChange(of: ratings) { _, _ in
+              convertRating()
             }
         }
         .font(.largeTitle)
