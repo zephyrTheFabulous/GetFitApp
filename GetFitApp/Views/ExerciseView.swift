@@ -14,7 +14,8 @@ struct ExerciseView: View {
   // change rating state
 //  @State private var rating = 0
   // to UserDefaults storage
-  @AppStorage("rating") private var rating = 0
+//  @AppStorage("rating") private var rating = 0
+  // moved this storage to RatingView to make ratings separate for each exercise
 
   @State private var showHistory = false
   @State private var showSuccessPage = false
@@ -82,9 +83,6 @@ struct ExerciseView: View {
         .padding()
 
         // Timer
-//          Text(Date().addingTimeInterval(interval),style: .timer)
-//  .font(.system(size: geo.size.height * 0.07)) // 7% of screen
-//       change to
         if showTimer { // TimerView appears when showTimer becomes true
           TimerView(
             timerIsOn: $timerIsOn,
@@ -94,7 +92,7 @@ struct ExerciseView: View {
 
         Spacer()
         // Rating buttons
-        RatingView(rating: $rating )
+        RatingView(exerciseIndex: index )
           .padding()
 
         // History button
