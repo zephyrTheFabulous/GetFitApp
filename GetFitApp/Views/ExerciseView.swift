@@ -10,7 +10,12 @@ import AVKit
 
 struct ExerciseView: View {
   @Binding var selectedTab: Int
-  @State private var rating = 0
+
+  // change rating state
+//  @State private var rating = 0
+  // to UserDefaults storage
+  @AppStorage("rating") private var rating = 0
+
   @State private var showHistory = false
   @State private var showSuccessPage = false
   @Environment(HistoryStore.self) private var history

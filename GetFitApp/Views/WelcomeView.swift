@@ -43,6 +43,7 @@ struct WelcomeView: View {
         } //: HS
         Button {
           selectedTab = 0
+          print(URL.documentsDirectory)
         } label: {
           Text("Get Started")
           Image(systemName: "chevron.right.circle")
