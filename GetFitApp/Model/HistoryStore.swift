@@ -22,20 +22,25 @@ struct ExerciseDay: Identifiable {
   // to exclude from release build
   init() {
     #if DEBUG
-    createDevData()
+//    createDevData()
     #endif
   }
 
   // Add exercise on pressing "Done" button
   func addDoneExercise(_ exerciseName: String) {
     let today = Date()
-    if today.isSameDay(as: exerciseDays[0].date) {
+    // change
+//    if today.isSameDay(as: exerciseDays[0].date) {
+    // to (optional check, two conditions)
+    if let firstDate = exerciseDays.first?.date, today.isSameDay(as: firstDate) {
       exerciseDays[0].exercises.append(exerciseName)
     } else {
       exerciseDays.insert(ExerciseDay(date: today, exercises: [exerciseName]), at: 0)
     }
     // if today is the same as this date, append the current exerciseName to the exercises array of this exerciseDay
     // if today is a new day, creates a new ExerciseDay and inserts it at the beginning of the exerciseDays
+
+    print("History: ", exerciseDays)
   }
 }
 
