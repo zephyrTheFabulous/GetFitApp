@@ -41,6 +41,7 @@ struct ExerciseDay: Identifiable {
     // if today is a new day, creates a new ExerciseDay and inserts it at the beginning of the exerciseDays
 
     print("History: ", exerciseDays)
+    print("Initializing HistoryStore")
   }
 }
 
