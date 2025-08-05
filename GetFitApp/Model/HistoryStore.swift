@@ -18,11 +18,27 @@ struct ExerciseDay: Identifiable {
 
 @Observable class HistoryStore {
   var exerciseDays: [ExerciseDay] = []
+  var loadingError = false // show alert when it's true
+
+  enum FileError: Error {
+    case loadFailure
+    case saveFailure
+  }
+
+  func load() throws { // method that raises an error
+//    throw FileError.loadFailure
+  }
 
   // to exclude from release build
   init() {
     #if DEBUG
 //    createDevData()
+
+    do {
+      try load()
+    } catch { // if there is a error
+      loadingError = true
+    }
     #endif
   }
 
@@ -43,7 +59,7 @@ struct ExerciseDay: Identifiable {
     print("History: ", exerciseDays)
     print("Initializing HistoryStore")
   }
-}
+} //: HistoryStore
 
 // Sample data for HistoryStore. Not part of the core definition
 // function that just fills in the store with sample data
