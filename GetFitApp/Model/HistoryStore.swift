@@ -42,6 +42,17 @@ struct ExerciseDay: Identifiable {
         $0.exercises
       ]
     } // same converting functionality as for loop before
+
+    do {
+      let data = try PropertyListSerialization.data(
+        fromPropertyList: plistData,
+        format: .binary,
+        options: .zero
+      ) // convert history data to plist format
+      try data.write(to: dataURL, options: .atomic)
+    } catch {
+      throw FileError.saveFailure
+    }
   }  // basically coping into new plist what is already in exerciseDays
 
   // to exclude from release build
@@ -73,6 +84,12 @@ struct ExerciseDay: Identifiable {
 
     print("History: ", exerciseDays)
     print("Initializing HistoryStore")
+
+    do {
+      try save()
+    } catch {
+      fatalError(error.localizedDescription)
+    }
   }
 } //: HistoryStore
 
