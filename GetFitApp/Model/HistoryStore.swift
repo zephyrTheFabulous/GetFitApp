@@ -32,7 +32,30 @@ struct ExerciseDay: Identifiable {
 
   func load() throws { // method that raises an error
 //    throw FileError.loadFailure
-  }
+
+    guard let data = try? Data(contentsOf: dataURL) else {
+      return
+    } // check if history.plist exists on first run, and jump out of the method if condition is not met. Meaning, ignore loading method altogether if there is nothing to load.
+
+    do {
+//      let data = try Data(contentsOf: dataURL) // instead of hard load, we use guard ^
+
+      let plistData = try PropertyListSerialization.propertyList(
+        from: data,
+        options: [],
+        format: nil
+      )
+      let convertedPlistData = plistData as? [[Any]] ?? []
+      exerciseDays = convertedPlistData.map {
+        ExerciseDay(
+          date: $0[1] as? Date ?? Date(),
+          exercises: $0[2] as? [String] ?? []
+        )
+      }
+    } catch {
+      throw FileError.loadFailure
+    }
+  } //: LOAD
 
   func save() throws {
     let plistData = exerciseDays.map {
@@ -53,7 +76,8 @@ struct ExerciseDay: Identifiable {
     } catch {
       throw FileError.saveFailure
     }
-  }  // basically coping into new plist what is already in exerciseDays
+  } //: SAVE
+    // basically coping into new plist what is already in exerciseDays
 
   // to exclude from release build
   init() {
