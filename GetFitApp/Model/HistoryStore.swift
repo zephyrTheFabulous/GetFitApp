@@ -18,6 +18,11 @@ struct ExerciseDay: Identifiable {
 
 @Observable class HistoryStore {
   var exerciseDays: [ExerciseDay] = []
+
+  var dataURL: URL {
+    URL.documentsDirectory.appendingPathComponent("history.plist")
+  }
+
   var loadingError = false // show alert when it's true
 
   enum FileError: Error {
@@ -28,6 +33,17 @@ struct ExerciseDay: Identifiable {
   func load() throws { // method that raises an error
 //    throw FileError.loadFailure
   }
+
+  func save() throws {
+    var plistData: [[Any]] = []
+    for exerciseDay in exerciseDays {
+      plistData.append(([
+        exerciseDay.id.uuidString,
+        exerciseDay.date,
+        exerciseDay.exercises
+      ]))
+    }
+  }  // basically coping into new plist what is already in exerciseDays
 
   // to exclude from release build
   init() {
