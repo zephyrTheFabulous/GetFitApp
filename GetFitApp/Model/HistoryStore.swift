@@ -35,14 +35,13 @@ struct ExerciseDay: Identifiable {
   }
 
   func save() throws {
-    var plistData: [[Any]] = []
-    for exerciseDay in exerciseDays {
-      plistData.append(([
-        exerciseDay.id.uuidString,
-        exerciseDay.date,
-        exerciseDay.exercises
-      ]))
-    }
+    let plistData = exerciseDays.map {
+      [
+        $0.id.uuidString, // $0 because it's just one input parameter
+        $0.date,
+        $0.exercises
+      ]
+    } // same converting functionality as for loop before
   }  // basically coping into new plist what is already in exerciseDays
 
   // to exclude from release build
