@@ -77,7 +77,7 @@ struct ExerciseDay: Identifiable {
       throw FileError.saveFailure
     }
   } //: SAVE
-    // basically coping into new plist what is already in exerciseDays
+    // basically copying into new plist content what is already in exerciseDays
 
   // to exclude from release build
   init() {

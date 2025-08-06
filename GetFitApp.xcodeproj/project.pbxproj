@@ -12,6 +12,7 @@
 		293FC2CB2E31933D0000DE13 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293FC2CA2E31933D0000DE13 /* RatingView.swift */; };
 		2956A3312E37792C009F1727 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2956A3302E37792C009F1727 /* TimerView.swift */; };
 		2960E0112E32A17D00374992 /* HistoryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2960E0102E32A17D00374992 /* HistoryStore.swift */; };
+		297372772E4404F0003407FD /* RaisedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297372762E4404F0003407FD /* RaisedButton.swift */; };
 		29793E372E3033AC00BE0BEB /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29793E362E3033AC00BE0BEB /* Exercise.swift */; };
 		29793E392E304B6F00BE0BEB /* TabViewStyleVariation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29793E382E304B6F00BE0BEB /* TabViewStyleVariation.swift */; };
 		297BE2AF2E302500008AA6E7 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297BE2AE2E302500008AA6E7 /* HeaderView.swift */; };
@@ -34,6 +35,7 @@
 		293FC2CA2E31933D0000DE13 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 		2956A3302E37792C009F1727 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		2960E0102E32A17D00374992 /* HistoryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryStore.swift; sourceTree = "<group>"; };
+		297372762E4404F0003407FD /* RaisedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaisedButton.swift; sourceTree = "<group>"; };
 		29793E362E3033AC00BE0BEB /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		29793E382E304B6F00BE0BEB /* TabViewStyleVariation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewStyleVariation.swift; sourceTree = "<group>"; };
 		297BE2AE2E302500008AA6E7 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 				297BE2AE2E302500008AA6E7 /* HeaderView.swift */,
 				29B9FE0F2E33D9030043BE3E /* SuccessView.swift */,
 				2956A3302E37792C009F1727 /* TimerView.swift */,
+				297372762E4404F0003407FD /* RaisedButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -215,6 +218,7 @@
 				2999922F2E2E98560017BC22 /* GetFitAppApp.swift in Sources */,
 				290B23A72E322C0800369DA1 /* DateExtension.swift in Sources */,
 				29793E372E3033AC00BE0BEB /* Exercise.swift in Sources */,
+				297372772E4404F0003407FD /* RaisedButton.swift in Sources */,
 				290B23A42E32287E00369DA1 /* HistoryView.swift in Sources */,
 				29793E392E304B6F00BE0BEB /* TabViewStyleVariation.swift in Sources */,
 				29C114D22E316DC600CF1B87 /* VideoPlayerView.swift in Sources */,
