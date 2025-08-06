@@ -7,15 +7,31 @@
 
 import SwiftUI
 
+// change
+//struct RaisedButton: View {
+//    var body: some View {
+//      Button {
+//
+//      } label: {
+//        Text("Get Started")
+//          .raisedButtonTextStyle()
+//      }
+//    }
+//}
+// to
 struct RaisedButton: View {
-    var body: some View {
-      Button {
+  let buttonText: String
+  let action: () -> Void
 
-      } label: {
-        Text("Get Started")
-          .raisedButtonTextStyle()
-      }
+  var body: some View {
+    Button {
+      action()
+    } label: {
+      Text(buttonText)
+        .raisedButtonTextStyle()
     }
+    .buttonStyle(.raised)
+  }
 }
 
 extension Text {
@@ -50,7 +66,9 @@ extension ButtonStyle where Self == RaisedButtonStyle {
 
 #Preview(traits: .sizeThatFitsLayout) {
     ZStack {
-      RaisedButton()
+      RaisedButton(buttonText: "Get Started") {
+        print("Go Go!")
+      }
         .padding(20)
     }
     .background(Color("background"))

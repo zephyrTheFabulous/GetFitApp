@@ -12,6 +12,13 @@ struct WelcomeView: View {
   @Binding var selectedTab: Int
   @State private var showHistory = false
 
+  var getStartedButton: some View {
+    RaisedButton(buttonText: "Get Started") {
+      selectedTab = 0
+    }
+    .padding()
+  }
+
   var body: some View {
     ZStack {
       VStack {
@@ -41,15 +48,20 @@ struct WelcomeView: View {
               .font(.headline)
           }
         } //: HS
-        Button {
-          selectedTab = 0
-//          print(URL.documentsDirectory)
-        } label: {
-          Text("Get Started")
-            .raisedButtonTextStyle()
-        }
-        .buttonStyle(.raised)
-        .padding()
+
+        //MARK: - Get Started Button
+        //  change
+//        Button {
+//          selectedTab = 0
+//            //          print(URL.documentsDirectory)
+//        } label: {
+//          Text("Get Started")
+//            .raisedButtonTextStyle()
+//        }
+//        .buttonStyle(.raised)
+//        .padding()
+        // to
+        getStartedButton
 
       } //: VS
     } //: ZS
