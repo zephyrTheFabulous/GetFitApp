@@ -46,11 +46,11 @@ struct WelcomeView: View {
 //          print(URL.documentsDirectory)
         } label: {
           Text("Get Started")
-          Image(systemName: "chevron.right.circle")
+            .raisedButtonTextStyle()
         }
-        .font(.title2)
+        .buttonStyle(.raised)
         .padding()
-        .background(Capsule().stroke(.gray, lineWidth: 2))
+
       } //: VS
     } //: ZS
   }
