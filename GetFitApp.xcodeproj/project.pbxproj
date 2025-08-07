@@ -21,6 +21,7 @@
 		2999922F2E2E98560017BC22 /* GetFitAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2999922B2E2E98560017BC22 /* GetFitAppApp.swift */; };
 		29B9FE102E33D9030043BE3E /* SuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B9FE0F2E33D9030043BE3E /* SuccessView.swift */; };
 		29C114D22E316DC600CF1B87 /* VideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C114D12E316DC600CF1B87 /* VideoPlayerView.swift */; };
+		29CB3C502E4500A30043CFDF /* EmbossedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CB3C4F2E4500A30043CFDF /* EmbossedButton.swift */; };
 		29E57E612E2EBD1E00DD0A0D /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E57E602E2EBD1E00DD0A0D /* WelcomeView.swift */; };
 		29E57E632E2EBD2800DD0A0D /* ExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E57E622E2EBD2800DD0A0D /* ExerciseView.swift */; };
 		29E57E692E2EBF7200DD0A0D /* stretch.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 29E57E652E2EBF7200DD0A0D /* stretch.mp4 */; };
@@ -45,6 +46,7 @@
 		2999922B2E2E98560017BC22 /* GetFitAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFitAppApp.swift; sourceTree = "<group>"; };
 		29B9FE0F2E33D9030043BE3E /* SuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessView.swift; sourceTree = "<group>"; };
 		29C114D12E316DC600CF1B87 /* VideoPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerView.swift; sourceTree = "<group>"; };
+		29CB3C4F2E4500A30043CFDF /* EmbossedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbossedButton.swift; sourceTree = "<group>"; };
 		29E57E602E2EBD1E00DD0A0D /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		29E57E622E2EBD2800DD0A0D /* ExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseView.swift; sourceTree = "<group>"; };
 		29E57E652E2EBF7200DD0A0D /* stretch.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = stretch.mp4; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 				29B9FE0F2E33D9030043BE3E /* SuccessView.swift */,
 				2956A3302E37792C009F1727 /* TimerView.swift */,
 				297372762E4404F0003407FD /* RaisedButton.swift */,
+				29CB3C4F2E4500A30043CFDF /* EmbossedButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -220,6 +223,7 @@
 				29793E372E3033AC00BE0BEB /* Exercise.swift in Sources */,
 				297372772E4404F0003407FD /* RaisedButton.swift in Sources */,
 				290B23A42E32287E00369DA1 /* HistoryView.swift in Sources */,
+				29CB3C502E4500A30043CFDF /* EmbossedButton.swift in Sources */,
 				29793E392E304B6F00BE0BEB /* TabViewStyleVariation.swift in Sources */,
 				29C114D22E316DC600CF1B87 /* VideoPlayerView.swift in Sources */,
 			);
