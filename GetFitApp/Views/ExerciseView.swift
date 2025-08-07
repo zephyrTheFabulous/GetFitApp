@@ -64,7 +64,19 @@ struct ExerciseView: View {
     } // if it's the last exercise, opens SuccessView, otherwise scrolls to next exercise
   }
 
+  var historyButton: some View {
+    Button {
+      showHistory = true
+    } label: {
+      Text("History")
+        .fontWeight(.bold)
+        .padding(.horizontal, 5)
+    }
+    .padding(.bottom, 10)
+    .buttonStyle(.embossed)
+  }
 
+  //MARK: - BODY
   var body: some View {
     GeometryReader { geo in
       VStack {
@@ -103,9 +115,12 @@ struct ExerciseView: View {
           .padding()
 
         // History button
-        Button("History") {
-          showHistory.toggle()
-        }
+        // change
+//        Button("History") {
+//          showHistory.toggle()
+//        }
+        // to
+        historyButton
         .sheet(isPresented: $showHistory) {
           HistoryView(showHistory: $showHistory)
         }

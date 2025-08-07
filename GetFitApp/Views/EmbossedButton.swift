@@ -50,7 +50,7 @@ struct EmbossedButtonStyle: ButtonStyle {
   // shortening of EmbossedButton to .embossed
 extension ButtonStyle where Self == EmbossedButtonStyle {
   static var embossed: EmbossedButtonStyle {
-    .init(buttonShape: .round) // diameter from the height of the button
+    .init(buttonShape: .capsule) // diameter from the height of the button
     // same as
     // EmbossedButtonStyle(buttonShape: .round)
   }

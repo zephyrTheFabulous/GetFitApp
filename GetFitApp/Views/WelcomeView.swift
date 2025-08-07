@@ -19,6 +19,19 @@ struct WelcomeView: View {
     .padding()
   }
 
+  var historyButton: some View {
+    Button {
+      showHistory = true
+    } label: {
+      Text("History")
+        .fontWeight(.bold)
+      .padding(.horizontal, 5)
+    }
+    .padding(.bottom, 10)
+    .buttonStyle(.embossed)
+  }
+
+  //MARK: - BODY
   var body: some View {
     ZStack {
       VStack {
@@ -27,9 +40,12 @@ struct WelcomeView: View {
           // History button
         Spacer()
 
-        Button("History") {
-          showHistory.toggle()
-        }
+        // change
+//        Button("History") {
+//          showHistory.toggle()
+//        }
+        // to
+        historyButton
         .sheet(isPresented: $showHistory) {
           HistoryView(showHistory: $showHistory)
         }

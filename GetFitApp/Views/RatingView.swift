@@ -1,23 +1,23 @@
-//
-//  RatingView.swift
-//  GetFitApp
-//
-//  Created by Anthony on 24/7/25.
-//
+  //
+  //  RatingView.swift
+  //  GetFitApp
+  //
+  //  Created by Anthony on 24/7/25.
+  //
 
 import SwiftUI
 
 struct RatingView: View {
-  // move storage from ExerciseView, to RatingView. Change
-//  @Binding var rating: Int
-  // to
+    // move storage from ExerciseView, to RatingView. Change
+    //  @Binding var rating: Int
+    // to
   let exerciseIndex: Int
   @AppStorage("ratings") private var ratings = "" // separate rating storage for each exercise
   @State private var rating = 0
 
   let maximumRating = 5
 
-  let onColor = Color.red
+  let onColor = Color.yellow
   let offColor = Color.gray
 
   func updateRating(index: Int) {
@@ -26,8 +26,8 @@ struct RatingView: View {
     ratings.replaceSubrange(index...index, with: String(rating))
   }
 
-  // safe mechanism to avoid going over the range
-  // ratings must have as many characters as exercises
+    // safe mechanism to avoid going over the range
+    // ratings must have as many characters as exercises
   init(exerciseIndex: Int) {
     self.exerciseIndex = exerciseIndex
     let desiredLength = Exercise.exercises.count
@@ -45,28 +45,40 @@ struct RatingView: View {
     let character = ratings[index]
     rating = character.wholeNumberValue ?? 0
   }
-  
+
+    //MARK: - BODY
   var body: some View {
-      HStack {
-        ForEach(1 ..< maximumRating + 1, id: \.self) { index in
-          Image(systemName: "star.hexagon")
+    HStack {
+      ForEach(1 ..< maximumRating + 1, id: \.self) { index in
+          // change
+          //          Image(systemName: "star.hexagon")
+          //            .foregroundStyle(index > rating ? offColor : onColor)
+          //            .onTapGesture {
+          //              // replace this
+          ////               rating = index
+          //              // with
+          //              updateRating(index: index)
+          //            }
+          // to
+        Button {
+          updateRating(index: index)
+        } label: {
+          Image(systemName: index > rating ? "star" : "star.fill")
             .foregroundStyle(index > rating ? offColor : onColor)
-            .onTapGesture {
-              // replace this
-//               rating = index
-              // with
-              updateRating(index: index)
-            }
-            .onAppear {
-              convertRating()
-            }
-            .onChange(of: ratings) { _, _ in
-              convertRating()
-            }
+            .font(.body)
+
         }
-        .font(.largeTitle)
+        .buttonStyle(EmbossedButtonStyle(buttonShape: .round))
+        .onChange(of: ratings) { _, _ in
+          convertRating()
+        }
+        .onAppear {
+          convertRating()
+        }
       }
+      .font(.largeTitle)
     }
+  }
 }
 
 // temporary @AppStorage
