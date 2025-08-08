@@ -11,14 +11,14 @@ import SwiftUI
 struct WelcomeView: View {
   @Binding var selectedTab: Int
   @State private var showHistory = false
-
+  
   var getStartedButton: some View {
     RaisedButton(buttonText: "Get Started") {
       selectedTab = 0
     }
     .padding()
   }
-
+  
   var historyButton: some View {
     Button {
       showHistory = true
@@ -30,19 +30,20 @@ struct WelcomeView: View {
     .padding(.bottom, 10)
     .buttonStyle(.embossed)
   }
-
+  
     //MARK: - BODY
   var body: some View {
     GeometryReader { geo in
       VStack {
         HeaderView(selectedTab: $selectedTab, titleName: "Welcome")
-
+        Spacer()
+        
         ContainerView { // background
           ViewThatFits {
             VStack { // first stack to show wherever it can, but when space is tight(Dynamic Type), it will use the alternative one
               WelcomeView.images // extension
               WelcomeView.welcomeText
-
+              
                 //MARK: - Get Started Button
               getStartedButton
                 //MARK: - History button
@@ -51,7 +52,7 @@ struct WelcomeView: View {
             } //: VS
             VStack { // alternative stack
               WelcomeView.welcomeText
-
+              
                 //MARK: - Get Started Button
               getStartedButton
                 //MARK: - History button
@@ -59,7 +60,7 @@ struct WelcomeView: View {
               historyButton
             } //: VS
           } //: ViewThatFits
-        }
+        } //: ContainerView
         .frame(height: geo.size.height * 0.8) // container takes up to 80% of available space
       } //: main VS
       .sheet(isPresented: $showHistory) {

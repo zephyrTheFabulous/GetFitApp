@@ -83,49 +83,53 @@ struct ExerciseView: View {
         // Header
         HeaderView(selectedTab: $selectedTab, titleName: exercise.exerciseName)
           .padding(.bottom, 16)
-
-        // VideoPlayer
-        VideoPlayerView(videoName: exercise.videoName)
-          .frame(height: geo.size.height * 0.45) // 45% of screen
-
-          // Start & Done buttons
-        HStack (alignment: .center, spacing: 150)  {
-          startButton
-          doneButton
-            .disabled(timerIsOn)
-            .sheet(isPresented: $showSuccessPage) {
-              SuccessView(selectedTab: $selectedTab)
-                .presentationDetents([.medium,.large])
-            }
-        }
-        .font(.title3)
-        .padding()
-
-        // Timer
-        if showTimer { // TimerView appears when showTimer becomes true
-          TimerView(
-            timerIsOn: $timerIsOn,
-            size: geo.size.height * 0.07
-          )
-        }
-
         Spacer()
-        // Rating buttons
-        RatingView(exerciseIndex: index )
-          .padding()
+        
+        ContainerView {
+          VStack {
+            // VideoPlayer
+            VideoPlayerView(videoName: exercise.videoName)
+              .mask(RoundedRectangle(cornerRadius: 10))
+              .frame(height: geo.size.height * 0.35) // 45% of screen
+              .padding()
 
-        // History button
-        // change
-//        Button("History") {
-//          showHistory.toggle()
-//        }
-        // to
-        historyButton
-        .sheet(isPresented: $showHistory) {
-          HistoryView(showHistory: $showHistory)
-        }
+              // Start & Done buttons
+            HStack (alignment: .center, spacing: 150)  {
+              startButton
+              doneButton
+                .disabled(timerIsOn)
+                .sheet(isPresented: $showSuccessPage) {
+                  SuccessView(selectedTab: $selectedTab)
+                    .presentationDetents([.medium,.large])
+                }
+            }
+            .font(.title3)
+            .padding()
+
+            // Timer
+            if showTimer { // TimerView appears when showTimer becomes true
+              TimerView(
+                timerIsOn: $timerIsOn,
+                size: geo.size.height * 0.07
+              )
+            }
+
+            Spacer()
+            // Rating buttons
+            RatingView(exerciseIndex: index )
+              .padding()
+
+            // History button
+            historyButton
+              .padding()
+          } //: VS
+        } //: ContainerView
+        .frame(height: geo.size.height * 0.8)
+      } //: main VS
+      .sheet(isPresented: $showHistory) {
+        HistoryView(showHistory: $showHistory)
       }
-    }
+    } //: Geo
   }
 }
 

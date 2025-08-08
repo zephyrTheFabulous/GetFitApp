@@ -30,7 +30,7 @@ struct ContentView: View {
       } //: TAB
 //      .environment(HistoryStore()) // gives access to HistoryStore to all subviews of TabView
       .tabViewStyle(.page(indexDisplayMode: .never))
-      }
+      } //: ZStack
   } //: body
 }
 
