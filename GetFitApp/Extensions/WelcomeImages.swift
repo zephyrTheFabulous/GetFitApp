@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-extension WelcomeView {
+extension WelcomeView { // WelcomeView now has 2 static vars: images and welcomeText
   static var images: some View {
     ZStack {
       Image(.running)
@@ -58,6 +58,7 @@ extension WelcomeView {
           .font(.headline)
           .fontWeight(.medium)
           .kerning(2)
+          .fixedSize(horizontal: false, vertical: true)
       }
     }
   }

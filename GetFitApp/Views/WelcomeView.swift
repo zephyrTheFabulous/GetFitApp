@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-// No actions on Welcome page beside Get Started button which selects first exercise page
+  // No actions on Welcome page beside Get Started button which selects first exercise page
 struct WelcomeView: View {
   @Binding var selectedTab: Int
   @State private var showHistory = false
@@ -25,64 +25,50 @@ struct WelcomeView: View {
     } label: {
       Text("History")
         .fontWeight(.bold)
-      .padding(.horizontal, 5)
+        .padding(.horizontal, 5)
     }
     .padding(.bottom, 10)
     .buttonStyle(.embossed)
   }
 
-  //MARK: - BODY
+    //MARK: - BODY
   var body: some View {
-    ZStack {
+    GeometryReader { geo in
       VStack {
         HeaderView(selectedTab: $selectedTab, titleName: "Welcome")
 
-          // History button
-        Spacer()
+        ContainerView { // background
+          ViewThatFits {
+            VStack { // first stack to show wherever it can, but when space is tight(Dynamic Type), it will use the alternative one
+              WelcomeView.images // extension
+              WelcomeView.welcomeText
 
-        // change
-//        Button("History") {
-//          showHistory.toggle()
-//        }
-        // to
-        historyButton
-        .sheet(isPresented: $showHistory) {
-          HistoryView(showHistory: $showHistory)
+                //MARK: - Get Started Button
+              getStartedButton
+                //MARK: - History button
+              Spacer()
+              historyButton
+            } //: VS
+            VStack { // alternative stack
+              WelcomeView.welcomeText
+
+                //MARK: - Get Started Button
+              getStartedButton
+                //MARK: - History button
+              Spacer()
+              historyButton
+            } //: VS
+          } //: ViewThatFits
         }
-      } //: VS
-      VStack {
-        HStack (alignment: .top)  {
-          Image("running")
-            .resizable()
-            .scaledToFill()
-            .frame(width: 240, height: 240)
-            .clipShape(Circle())
-          VStack(alignment: .leading) {
-            Text("Get fit")
-              .font(.largeTitle)
-            Text("with high intensity interval training")
-              .font(.headline)
-          }
-        } //: HS
-
-        //MARK: - Get Started Button
-        //  change
-//        Button {
-//          selectedTab = 0
-//            //          print(URL.documentsDirectory)
-//        } label: {
-//          Text("Get Started")
-//            .raisedButtonTextStyle()
-//        }
-//        .buttonStyle(.raised)
-//        .padding()
-        // to
-        getStartedButton
-
-      } //: VS
-    } //: ZS
+        .frame(height: geo.size.height * 0.8) // container takes up to 80% of available space
+      } //: main VS
+      .sheet(isPresented: $showHistory) {
+        HistoryView(showHistory: $showHistory)
+      }
+    } //: GEO
   }
 }
+
 
 #Preview {
   WelcomeView(selectedTab: .constant(9))
