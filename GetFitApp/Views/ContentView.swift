@@ -13,28 +13,32 @@ struct ContentView: View {
     // to
   @SceneStorage("selectedTab") private var selectedTab = 9 // to persist scene state
 
+  //MARK: - BODY
   var body: some View {
-      //       After refactoring
-    TabView (selection: $selectedTab) {
-      WelcomeView(selectedTab: $selectedTab)
-        .tag(9)
 
-      ForEach(Exercise.exercises.indices, id: \.self) { index in // .indices means "each index"
-        ExerciseView(selectedTab: $selectedTab, index: index)
-          .tag(index) // each exercise is tagged with index
+      ZStack {
+        GradientBackground()
+        //       After refactoring
+      TabView (selection: $selectedTab) {
+        WelcomeView(selectedTab: $selectedTab)
+          .tag(9)
+
+        ForEach(Exercise.exercises.indices, id: \.self) { index in // .indices means "each index"
+          ExerciseView(selectedTab: $selectedTab, index: index)
+            .tag(index) // each exercise is tagged with index
+        }
+      } //: TAB
+  //    .environment(HistoryStore()) // gives access to HistoryStore to all subviews of TabView
+      .tabViewStyle(.page(indexDisplayMode: .never))
       }
-    } //: TAB
-//    .environment(HistoryStore()) // gives access to HistoryStore to all subviews of TabView
-    .tabViewStyle(.page(indexDisplayMode: .never))
-
-  }
+  } //: body
 }
 
 #Preview {
-  ZStack {
-    Color.teal.opacity(0.25).ignoresSafeArea()
+//  ZStack {
+//    Color.teal.opacity(0.25).ignoresSafeArea()
     ContentView()
-  }
+//  }
 }
 
   //#Preview("Variation") {
