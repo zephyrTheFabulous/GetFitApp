@@ -25,9 +25,9 @@ struct ContainerView<Content: View>: View {
           .foregroundStyle(Color.background) // to keep sharp edges
       }
       content
-    }
+    } //: ZS
   }
-}
+} //: ContainerView
 
 #Preview {
   ContainerView { // with SAMPLE CONTENT
