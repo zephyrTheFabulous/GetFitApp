@@ -9,9 +9,9 @@ import SwiftUI
 
 struct ContentView: View {
     // change
-  @State private var selectedTab = 9 // for WelcomeView page
+//  @State private var selectedTab = 9 // for WelcomeView page
     // to
-//  @SceneStorage("selectedTab") private var selectedTab = 9 // to persist scene state
+  @SceneStorage("selectedTab") private var selectedTab = 9 // to persist scene state
 
   //MARK: - BODY
   var body: some View {
@@ -38,7 +38,7 @@ struct ContentView: View {
 //  ZStack {
 //    Color.teal.opacity(0.25).ignoresSafeArea()
     ContentView()
-    .environment(HistoryStore()) // delete later and activate @SceneStorage instead of @State
+//    .environment(HistoryStore()) // delete later and activate @SceneStorage instead of @State
 //  }
 }
 

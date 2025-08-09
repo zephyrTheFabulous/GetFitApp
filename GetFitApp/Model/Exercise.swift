@@ -38,4 +38,11 @@ extension Exercise {
       videoName: "jump"
     )
   ]
+
+  static let names: [String] = [
+    ExerciseEnum.stretch.rawValue,
+    ExerciseEnum.run.rawValue,
+    ExerciseEnum.stairs.rawValue,
+    ExerciseEnum.jump.rawValue
+  ]
 }

@@ -18,16 +18,30 @@ struct ExerciseDay: Identifiable {
 
 @Observable class HistoryStore {
   var exerciseDays: [ExerciseDay] = []
-
-  var dataURL: URL {
-    URL.documentsDirectory.appendingPathComponent("history.plist")
-  }
-
   var loadingError = false // show alert when it's true
 
   enum FileError: Error {
     case loadFailure
     case saveFailure
+  }
+
+  var dataURL: URL {
+    URL.documentsDirectory
+      .appendingPathComponent("history.plist")
+  }
+
+  init(preview: Bool = false) {
+#if DEBUG
+    if preview {
+      createDevData()
+    } else {
+      do {
+        try load()
+      } catch {
+        loadingError = true
+      }
+    }
+#endif
   }
 
   func load() throws { // method that raises an error
@@ -79,20 +93,8 @@ struct ExerciseDay: Identifiable {
   } //: SAVE
     // basically copying into new plist content what is already in exerciseDays
 
-  // to exclude from release build
-  init() {
-    #if DEBUG
-//    createDevData()
 
-    do {
-      try load()
-    } catch { // if there is a error
-      loadingError = true
-    }
-    #endif
-  }
-
-  // Add exercise on pressing "Done" button
+    // Add exercise on pressing "Done" button
   func addDoneExercise(_ exerciseName: String) {
     let today = Date()
     // change
@@ -122,21 +124,36 @@ struct ExerciseDay: Identifiable {
 extension HistoryStore {
    func createDevData() {
     exerciseDays = [
-      .init( // yesterday
+      ExerciseDay(
         date: Date().addingTimeInterval(-86400),
         exercises: [
           Exercise.exercises[0].exerciseName,
           Exercise.exercises[1].exerciseName,
           Exercise.exercises[2].exerciseName,
-        ]
-      ),
-      .init( // day before yesterday
-        date: Date().addingTimeInterval(-86400 * 2),
+          Exercise.exercises[0].exerciseName,
+          Exercise.exercises[0].exerciseName
+        ]),
+      ExerciseDay(
+        date: Date().addingTimeInterval(-86400 * 3),
+        exercises: [
+          Exercise.exercises[2].exerciseName,
+          Exercise.exercises[2].exerciseName,
+          Exercise.exercises[3].exerciseName
+        ]),
+      ExerciseDay(
+        date: Date().addingTimeInterval(-86400 * 4),
         exercises: [
           Exercise.exercises[1].exerciseName,
+          Exercise.exercises[1].exerciseName
+        ]),
+      ExerciseDay(
+        date: Date().addingTimeInterval(-86400 * 5),
+        exercises: [
           Exercise.exercises[0].exerciseName,
-        ]
-      )
+          Exercise.exercises[1].exerciseName,
+          Exercise.exercises[3].exerciseName,
+          Exercise.exercises[3].exerciseName
+        ])
     ]
   }
 }
