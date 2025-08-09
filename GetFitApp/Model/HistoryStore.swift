@@ -33,7 +33,8 @@ struct ExerciseDay: Identifiable {
   init(preview: Bool = false) {
 #if DEBUG
     if preview {
-      createDevData()
+//      createDevData() // fixed Sample data
+      createHistoryTestData() // randomized Sample data
     } else {
       do {
         try load()
@@ -140,20 +141,48 @@ extension HistoryStore {
           Exercise.exercises[2].exerciseName,
           Exercise.exercises[3].exerciseName
         ]),
-      ExerciseDay(
-        date: Date().addingTimeInterval(-86400 * 4),
-        exercises: [
-          Exercise.exercises[1].exerciseName,
-          Exercise.exercises[1].exerciseName
-        ]),
-      ExerciseDay(
-        date: Date().addingTimeInterval(-86400 * 5),
-        exercises: [
-          Exercise.exercises[0].exerciseName,
-          Exercise.exercises[1].exerciseName,
-          Exercise.exercises[3].exerciseName,
-          Exercise.exercises[3].exerciseName
-        ])
+//      ExerciseDay(
+//        date: Date().addingTimeInterval(-86400 * 4),
+//        exercises: [
+//          Exercise.exercises[1].exerciseName,
+//          Exercise.exercises[1].exerciseName
+//        ]),
+//      ExerciseDay(
+//        date: Date().addingTimeInterval(-86400 * 5),
+//        exercises: [
+//          Exercise.exercises[0].exerciseName,
+//          Exercise.exercises[1].exerciseName,
+//          Exercise.exercises[3].exerciseName,
+//          Exercise.exercises[3].exerciseName
+//        ])
     ]
+  }
+
+    // This method creates random test data.
+  func createHistoryTestData() {
+    print("Data construction started")
+    exerciseDays = []
+    let numberOfDays: Int = 4
+    for day in 0..<numberOfDays {
+      guard let date =
+              Calendar.current.date(byAdding: .day, value: -day, to: Date())
+      else {
+        continue
+      }
+      var exerciseNames: [String] = []
+        // repeat a random number of times (max 6) (max 24 exercises)
+      for _ in 0..<Int.random(in: 0...4) {
+        for exercise in Exercise.exercises {
+          if Bool.random() {
+            exerciseNames.append(exercise.exerciseName)
+          }
+        }
+      }
+      if !exerciseNames.isEmpty {
+        exerciseDays.append(ExerciseDay(date: date, exercises: exerciseNames))
+      }
+    }
+    try? save()
+    print("Data construction completed")
   }
 }
