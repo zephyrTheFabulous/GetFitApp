@@ -14,6 +14,16 @@ struct ExerciseDay: Identifiable {
 
   let date: Date
   var exercises: [String] = []
+
+  // 1. fix repeated exercises in one day by converting them into set and then back to sorted array
+  var uniqueExercises: [String] {
+    Array(Set(exercises)).sorted(by: <)
+  }
+
+  // 2. show repeated exercises as accumulated number in .badge
+  func countExercise(exercise: String) -> Int {
+    exercises.filter { $0 == exercise }.count
+  }
 }
 
 @Observable class HistoryStore {
@@ -33,8 +43,8 @@ struct ExerciseDay: Identifiable {
   init(preview: Bool = false) {
 #if DEBUG
     if preview {
-//      createDevData() // fixed Sample data
-      createHistoryTestData() // randomized Sample data
+      createDevData() // fixed Sample data
+//      createHistoryTestData() // randomized Sample data
     } else {
       do {
         try load()
@@ -141,20 +151,20 @@ extension HistoryStore {
           Exercise.exercises[2].exerciseName,
           Exercise.exercises[3].exerciseName
         ]),
-//      ExerciseDay(
-//        date: Date().addingTimeInterval(-86400 * 4),
-//        exercises: [
-//          Exercise.exercises[1].exerciseName,
-//          Exercise.exercises[1].exerciseName
-//        ]),
-//      ExerciseDay(
-//        date: Date().addingTimeInterval(-86400 * 5),
-//        exercises: [
-//          Exercise.exercises[0].exerciseName,
-//          Exercise.exercises[1].exerciseName,
-//          Exercise.exercises[3].exerciseName,
-//          Exercise.exercises[3].exerciseName
-//        ])
+      ExerciseDay(
+        date: Date().addingTimeInterval(-86400 * 4),
+        exercises: [
+          Exercise.exercises[1].exerciseName,
+          Exercise.exercises[1].exerciseName
+        ]),
+      ExerciseDay(
+        date: Date().addingTimeInterval(-86400 * 5),
+        exercises: [
+          Exercise.exercises[0].exerciseName,
+          Exercise.exercises[1].exerciseName,
+          Exercise.exercises[3].exerciseName,
+          Exercise.exercises[3].exerciseName
+        ])
     ]
   }
 
