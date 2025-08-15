@@ -23,7 +23,7 @@ struct CountdownView: View {
 }
 
 struct TimerView: View {
-  @State private var timeRemaining: Int = 3 // test time
+  @State private var timeRemaining: Int = 1 // test time
   @Binding var timerIsOn: Bool
   let size: Double
 

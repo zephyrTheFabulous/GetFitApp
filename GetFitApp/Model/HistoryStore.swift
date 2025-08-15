@@ -20,7 +20,7 @@ struct ExerciseDay: Identifiable {
     Array(Set(exercises)).sorted(by: <)
   }
 
-  // 2. show repeated exercises as accumulated number in .badge
+  // 2. show repeated exercises in one day as accumulated number in .badge
   func countExercise(exercise: String) -> Int {
     exercises.filter { $0 == exercise }.count
   }
