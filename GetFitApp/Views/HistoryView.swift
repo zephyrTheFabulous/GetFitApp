@@ -35,12 +35,21 @@ struct HistoryView: View {
   }
 
   func dayView(day: ExerciseDay) -> some View {
-    Section(
-      header:
-        Text(day.date.formatted(as: "d MMM YYYY"))
-        .font(.headline)) {
-          exerciseView(day: day)
-        }
+    // change sections
+//    Section(
+//      header:
+//        Text(day.date.formatted(as: "d MMM YYYY"))
+//        .font(.headline)) {
+//          exerciseView(day: day)
+//        }
+    // to Disclosure Group
+    DisclosureGroup {
+      exerciseView(day: day)
+    } label: {
+      Text(day.date.formatted(as: "d MMM YYYY"))
+        .font(.headline)
+    }
+
   }
 
     //MARK: - BODY
