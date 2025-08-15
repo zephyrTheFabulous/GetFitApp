@@ -45,6 +45,8 @@ struct HistoryView: View {
     // to Disclosure Group
     DisclosureGroup {
       exerciseView(day: day)
+        .deleteDisabled(true)  // deletion glitch fix
+
     } label: {
       Text(day.date.formatted(as: "d MMM YYYY"))
         .font(.headline)
