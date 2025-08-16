@@ -127,7 +127,23 @@ struct ExerciseDay: Identifiable {
     } catch {
       fatalError(error.localizedDescription)
     }
+  } //: addDoneExercise
+
+  // add exercise by date from DatePicker
+  func addExercise(date: Date, exerciseName: String) {
+    let exerciseDay = ExerciseDay(date: date, exercises: [exerciseName])
+    if let index = exerciseDays.firstIndex(where: { $0.date.yearMonthDay <= date.yearMonthDay }) {
+      if date.isSameDay(as: exerciseDays[index].date) {
+        exerciseDays[index].exercises.append(exerciseName)
+      } else {
+        exerciseDays.insert(exerciseDay, at: index)
+      }
+    } else {
+      exerciseDays.append(exerciseDay)
+    }
+    try? save()
   }
+
 } //: HistoryStore
 
 // Sample data for HistoryStore. Not part of the core definition

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ButtonsView: View {
-//  @Environment(HistoryStore.self) private var history
+  @Environment(HistoryStore.self) private var history
   @Binding var date: Date
 
   var body: some View {
@@ -16,6 +16,7 @@ struct ButtonsView: View {
       ForEach(Exercise.exercises.indices, id: \.self) { index in
         let exerciseName = Exercise.exercises[index].exerciseName
         Button(exerciseName) {
+          history.addExercise(date: date, exerciseName: exerciseName)
         }
       }
     } //: HS
@@ -49,4 +50,5 @@ struct AddHistoryView: View {
 
 #Preview {
   AddHistoryView(addMode: .constant(true))
+    .environment(HistoryStore())
 }
