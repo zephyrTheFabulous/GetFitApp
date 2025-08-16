@@ -11,9 +11,18 @@ struct HistoryView: View {
   @Binding var showHistory: Bool
   @Environment(HistoryStore.self) private var history
     //  @Bindable var history: HistoryStore
+  @State private var addMode = false // show the calendar to add exercise to the list
 
   var headerView: some View {
     HStack {
+      Button {
+        addMode = true
+      } label: {
+        Image(systemName: "plus")
+      }
+      .padding(.trailing, 16)
+
+      EditButton()
       Spacer()
       Text("History")
         .font(.title)
@@ -94,8 +103,15 @@ struct HistoryView: View {
     // to
   var body: some View {
     VStack {
-      headerView
-        .padding()
+      Group {
+        if addMode {
+          Text("History")
+        } else {
+          headerView
+        }
+      }
+      .padding()
+      // Group is for hiding buttons while in add/edit mode
 
         // change Form
         //        Form {
@@ -111,6 +127,9 @@ struct HistoryView: View {
       @Bindable var history = history // Bindable needed to change Environment property
       List($history.exerciseDays, editActions: .delete) { $day in
         dayView(day: day) // List iterates through days, and dayView contain another loop that iterates through exercises
+      }
+      if addMode {
+        AddHistoryView(addMode: $addMode)
       }
     } //: VS
 //    .onDisappear {

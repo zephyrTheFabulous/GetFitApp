@@ -30,6 +30,7 @@
 		29E57E6A2E2EBF7200DD0A0D /* run.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 29E57E662E2EBF7200DD0A0D /* run.mp4 */; };
 		29E57E6B2E2EBF7200DD0A0D /* jump.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 29E57E682E2EBF7200DD0A0D /* jump.mp4 */; };
 		29E57E6C2E2EBF7200DD0A0D /* stairs.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 29E57E672E2EBF7200DD0A0D /* stairs.mp4 */; };
+		29F975AA2E5082D900D6C4B0 /* AddHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F975A92E5082D900D6C4B0 /* AddHistoryView.swift */; };
 		29FB4E982E454EC200C1C1E8 /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29FB4E972E454EC200C1C1E8 /* ContainerView.swift */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +59,7 @@
 		29E57E662E2EBF7200DD0A0D /* run.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = run.mp4; sourceTree = "<group>"; };
 		29E57E672E2EBF7200DD0A0D /* stairs.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = stairs.mp4; sourceTree = "<group>"; };
 		29E57E682E2EBF7200DD0A0D /* jump.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = jump.mp4; sourceTree = "<group>"; };
+		29F975A92E5082D900D6C4B0 /* AddHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHistoryView.swift; sourceTree = "<group>"; };
 		29FB4E972E454EC200C1C1E8 /* ContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -147,6 +149,7 @@
 				297BE2AE2E302500008AA6E7 /* HeaderView.swift */,
 				29B9FE0F2E33D9030043BE3E /* SuccessView.swift */,
 				2956A3302E37792C009F1727 /* TimerView.swift */,
+				29F975A92E5082D900D6C4B0 /* AddHistoryView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -228,6 +231,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2920865B2E45E29400AB8A4A /* WelcomeImages.swift in Sources */,
+				29F975AA2E5082D900D6C4B0 /* AddHistoryView.swift in Sources */,
 				2956A3312E37792C009F1727 /* TimerView.swift in Sources */,
 				297BE2AF2E302500008AA6E7 /* HeaderView.swift in Sources */,
 				29E57E632E2EBD2800DD0A0D /* ExerciseView.swift in Sources */,
