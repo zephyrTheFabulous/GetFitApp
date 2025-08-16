@@ -21,6 +21,7 @@
 		2999922D2E2E98560017BC22 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 299992292E2E98560017BC22 /* Assets.xcassets */; };
 		2999922E2E2E98560017BC22 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2999922A2E2E98560017BC22 /* ContentView.swift */; };
 		2999922F2E2E98560017BC22 /* GetFitAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2999922B2E2E98560017BC22 /* GetFitAppApp.swift */; };
+		29A266AE2E51426900C129FF /* BarChartDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A266AD2E51426900C129FF /* BarChartDayView.swift */; };
 		29B9FE102E33D9030043BE3E /* SuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B9FE0F2E33D9030043BE3E /* SuccessView.swift */; };
 		29C114D22E316DC600CF1B87 /* VideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C114D12E316DC600CF1B87 /* VideoPlayerView.swift */; };
 		29CB3C502E4500A30043CFDF /* EmbossedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CB3C4F2E4500A30043CFDF /* EmbossedButton.swift */; };
@@ -50,6 +51,7 @@
 		299992292E2E98560017BC22 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2999922A2E2E98560017BC22 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2999922B2E2E98560017BC22 /* GetFitAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFitAppApp.swift; sourceTree = "<group>"; };
+		29A266AD2E51426900C129FF /* BarChartDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartDayView.swift; sourceTree = "<group>"; };
 		29B9FE0F2E33D9030043BE3E /* SuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessView.swift; sourceTree = "<group>"; };
 		29C114D12E316DC600CF1B87 /* VideoPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerView.swift; sourceTree = "<group>"; };
 		29CB3C4F2E4500A30043CFDF /* EmbossedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbossedButton.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 				29B9FE0F2E33D9030043BE3E /* SuccessView.swift */,
 				2956A3302E37792C009F1727 /* TimerView.swift */,
 				29F975A92E5082D900D6C4B0 /* AddHistoryView.swift */,
+				29A266AD2E51426900C129FF /* BarChartDayView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -242,6 +245,7 @@
 				29E57E612E2EBD1E00DD0A0D /* WelcomeView.swift in Sources */,
 				2999922F2E2E98560017BC22 /* GetFitAppApp.swift in Sources */,
 				29FB4E982E454EC200C1C1E8 /* ContainerView.swift in Sources */,
+				29A266AE2E51426900C129FF /* BarChartDayView.swift in Sources */,
 				290B23A72E322C0800369DA1 /* DateExtension.swift in Sources */,
 				29793E372E3033AC00BE0BEB /* Exercise.swift in Sources */,
 				297372772E4404F0003407FD /* RaisedButton.swift in Sources */,

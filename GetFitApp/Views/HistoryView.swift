@@ -53,9 +53,11 @@ struct HistoryView: View {
 //        }
     // to Disclosure Group
     DisclosureGroup {
-      exerciseView(day: day)
-        .deleteDisabled(true)  // deletion glitch fix
-
+      // change list item
+//      exerciseView(day: day)
+//        .deleteDisabled(true)  // deletion glitch fix
+        // to charts
+      BarChartDayView(day: day)
     } label: {
       Text(day.date.formatted(as: "d MMM YYYY"))
         .font(.headline)
@@ -127,6 +129,7 @@ struct HistoryView: View {
       @Bindable var history = history // Bindable needed to change Environment property
       List($history.exerciseDays, editActions: .delete) { $day in
         dayView(day: day) // List iterates through days, and dayView contain another loop that iterates through exercises
+
       }
       if addMode {
         AddHistoryView(addMode: $addMode)

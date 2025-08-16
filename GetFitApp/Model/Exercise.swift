@@ -39,6 +39,7 @@ extension Exercise {
     )
   ]
 
+  // to use in Charts
   static let names: [String] = [
     ExerciseEnum.stretch.rawValue,
     ExerciseEnum.run.rawValue,
