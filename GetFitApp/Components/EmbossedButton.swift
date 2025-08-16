@@ -13,6 +13,7 @@ enum EmbossedButtonShape {
 
 struct EmbossedButtonStyle: ButtonStyle {
   var buttonShape = EmbossedButtonShape.capsule // default is capsule
+  var buttonScale = 1.0
 
   func makeBody(configuration: Configuration) -> some View {
     let shadow = Color.dropShadow
@@ -29,6 +30,7 @@ struct EmbossedButtonStyle: ButtonStyle {
             .offset(x: -1, y: -1) // to compensate for shadow shift
         }
       )
+      .scaleEffect(configuration.isPressed ? buttonScale : 1.0)
   }
 
   @ViewBuilder

@@ -130,6 +130,8 @@ struct HistoryView: View {
       }
       if addMode {
         AddHistoryView(addMode: $addMode)
+          .background(Color.primary.colorInvert()
+            .shadow(color: .primary.opacity(0.5), radius: 7)) // adaptive shadow changes with Light/Dark mode
       }
     } //: VS
 //    .onDisappear {
