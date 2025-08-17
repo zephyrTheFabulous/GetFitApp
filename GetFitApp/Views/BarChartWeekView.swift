@@ -15,12 +15,30 @@ struct BarChartWeekView: View {
 
     var body: some View {
       Chart(weekData) { day in
-        BarMark(
-//          x: .value("Date", day.date.dayName), // show only days with exericises or
-          x: .value("Date", day.date, unit: .day), // to show empty days
-          y: .value("Total Count", day.exercises.count)
-        )
+        ForEach(Exercise.names, id: \.self) { name in
+          BarMark(
+  //          x: .value("Date", day.date.dayName), // show only days with exericises or
+            x: .value("Date", day.date, unit: .day), // to show empty days
+            y: .value("Total Count", day.countExercise(exercise: name))
+          )
+          .foregroundStyle(by: .value("Exercise", name))
+        } // show exercises by colors
+
+          // Line variation
+//        LineMark(
+//          x: .value("Date", day.date, unit: .day), // to show empty days
+//          y: .value("Total Count", day.exercises.count)
+//        )
+//        .symbol(.circle) // corner symbol
+//        .interpolationMethod(.catmullRom)
+
       } //: Chart
+      .chartForegroundStyleScale([
+        "Stretch": Color(.chartExercise1),
+        "Running": Color(.chartExercise2),
+        "Stairs": Color(.chartExercise3),
+        "Jumping": Color(.chartExercise4)
+      ])
         // limitation to first 7 elements of array
       .onAppear {
         let firstDate = history.exerciseDays.first?.date ?? Date()
@@ -36,5 +54,5 @@ struct BarChartWeekView: View {
 
 #Preview {
   BarChartWeekView()
-    .environment(HistoryStore())
+    .environment(HistoryStore(preview: true))
 }

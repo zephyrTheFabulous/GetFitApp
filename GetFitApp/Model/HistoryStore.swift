@@ -43,8 +43,8 @@ struct ExerciseDay: Identifiable {
   init(preview: Bool = false) {
 #if DEBUG
     if preview {
-      createDevData() // fixed Sample data
-//      createHistoryTestData() // randomized Sample data
+//      createDevData() // fixed Sample data
+      createHistoryTestData() // randomized Sample data
     } else {
       do {
         try load()
