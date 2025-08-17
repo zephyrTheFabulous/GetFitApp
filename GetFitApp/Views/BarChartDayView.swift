@@ -8,6 +8,7 @@
 import SwiftUI
 import Charts
 
+// Chart to show amount of exercises in one day
 struct BarChartDayView: View {
   let day: ExerciseDay
 
