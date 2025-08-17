@@ -14,14 +14,23 @@ struct BarChartWeekView: View {
   @State private var weekData: [ExerciseDay] = []
 
     var body: some View {
-      Chart(history.exerciseDays.prefix(7)) { day in
+      Chart(weekData) { day in
         BarMark(
-          x: .value("Date", day.date.dayName), // show only days with exericises or
-//          x: .value("Date", day.date, unit: .day), // to show empty days
+//          x: .value("Date", day.date.dayName), // show only days with exericises or
+          x: .value("Date", day.date, unit: .day), // to show empty days
           y: .value("Total Count", day.exercises.count)
         )
       } //: Chart
         // limitation to first 7 elements of array
+      .onAppear {
+        let firstDate = history.exerciseDays.first?.date ?? Date()
+        let dates = firstDate.previousSevenDays
+        weekData = dates.map { date in
+          history.exerciseDays.first(
+            where: { $0.date.isSameDay(as: date)
+            }) ?? ExerciseDay(date: date)
+        }
+      } // array of last 7 days, including empty days
     }
 }
 
